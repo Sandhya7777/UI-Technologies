@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>`Simple Animation</title>
+	<style>
+		body
+		{
+			background-color: pink;
+		}
+		ul
+		{
+			margin-top: 150px;
+			margin-left: 250px;
+		}
+		ul li
+		{
+			width: 10px;
+			height: 10px;
+			background-color: black;
+			border-radius: 50%;
+			margin-right: 50px;
+			box-shadow: 0 0 15px white;
+			animation: zoom 1s linear 2s infinite normal;
+		}
+		@keyframes zoom
+		{
+			0%,50%,75%,100%
+			{
+				transform: scale(7,7);
+			}
+			25%
+			{
+				transform: scale(5,5);
+            }
+        }
+			ul li:first-child
+			{
+				background-color: yellow;
+				animation-delay: 0.1s;
+			}
+		
+	
+</head>
+<body>
+	<ul>
+	<ul type="circle">
+		<li>
+		<li></li>
+		</li>
+	</ul>
+
+</body>
+</html>

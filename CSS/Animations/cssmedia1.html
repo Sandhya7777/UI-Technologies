@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS LANDING PAGE</title>
+	<style>
+		h1
+		{
+			text-align:center;
+			margin-top:300px;
+			color:orange;
+		}
+		h4
+		{
+			color:black;
+			text-align:center;
+			box-shadow:0 0 20px blue;
+			width:180px;
+			margin-left:600px;
+			background:yellow;
+		}
+		p
+		{
+			box-shadow:0 0 20px black;
+			background-color:black;
+			color:white;
+		}
+		h2
+		{
+			color:white;
+			justify-content: center;
+			align-content: center;
+			display:flex;
+			flex-direction: row;
+		}
+		body
+		{
+			margin:0px;
+			background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjUsyImJJUKgNzpd8wwmyP9gfcSXmIEkdvcA&usqp=CAU);
+			background-size:cover;
+			background-attachment:fixed;
+			background-repeat:no-repeat;
+		}
+		.main-nav
+		{
+			background-color:black;
+			padding:10px;
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+		}
+		.main-nav h1
+		{
+			color:orange;
+			margin:0px;
+		}
+		.main-nav h1 span
+		{
+			color:yellow;
+			margin:0px;
+		}
+		.nav-items a
+		{
+			color:blue;
+			text-decoration:none;
+			margin:15px;
+
+		}
+		.nav-items a:hover
+		{
+			background:linear-gradient(45deg,orange,white,green);
+			padding:5px;
+			border-radius:5px;
+		}
+		@media(max-width:700px)
+		{
+			.main-nav
+			{
+				flex-direction:column;
+			}
+			.nav-items
+			{
+				margin-top:20px;
+			}
+		}
+
+		
+	</style>
+</head>
+<body>
+	<nav class="main-nav">
+		<h1>Jspiders <span>Institute</span></h1>
+		<div class="nav-items">
+			<a href="#">Home</a>
+			<a href="#">About</a>
+			<a href="#">Contact</a>
+			<a href="#">Careers</a>
+		</div>
+    </nav>
+       <h2>JSPIDERS TRAINING CENTER</h2>
+       <p>JSpiders is a best-in-class learning solutions organization headquartered in India’s IT capital, Bangalore. We offer a wide range of courses in the area of Java development. JSpiders is the world's ace Java development training organization with an aim to bridge the gap between the demands of the industry and the curriculum of educational institutions. With centers across the Globe, the institute is a platform where young minds are given the opportunity to build successful careers.”JSpiders is a place where businesses find talent and dreams take flight."</p>
+       <h4 a href = '#'>Learn More</a></h4>
+</body>
+</html>

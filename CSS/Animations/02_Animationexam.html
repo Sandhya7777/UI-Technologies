@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS ANIMATION 2</title>
+	<style>
+		body
+		{
+			background-color: green;
+		}
+		ul
+		{
+			margin-top: 150px;
+			margin-left: 250px;
+		}
+		ul li
+		{
+			display:inline-block;
+			width: 10px;
+			height: 10px;
+			background-color: black;
+			border-radius: 50%;
+			margin-right: 50px;
+			box-shadow: 0 0 15px white;
+			animation: zoom 1s linear 2s infinite normal;
+		}
+		@keyframes zoom
+		{
+			0%,50%,75%,100%
+			{
+				transform: scale(0.2,0.2);
+			}
+			25%
+			{
+				transform: scale(5,5);
+            }
+        }
+			ul li:first-child
+			{
+				background-color: yellow;
+				animation-delay: 0.1s;
+			}
+			ul li:last-child
+			{
+				background-color: pink;
+				animation-delay: 0.2s;
+			}
+			ul li:nth-child(2)
+			{
+				background-color: blue;
+				animation-delay: 0.3s;
+			}
+			ul li:nth-child(3)
+			{
+				background-color: violet;
+				animation-delay: 0.4s;
+			}
+			ul li:nth-child(4)
+			{
+				background-color: orange;
+				animation-delay: 0.5s;
+			}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+</body>
+</html>

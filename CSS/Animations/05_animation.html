@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Css Example-4</title>
+	<style>
+		ul
+		{
+			margin-top: 200px;
+			margin-left: 300px;
+		}
+		#b
+		{
+			display: inline-block;
+			background-color:deeppink;
+			width: 300px;
+			height: 200px;
+			border-radius: 70%;
+			border:5px solid cyan;
+			border-left-color: blue;
+			border-bottom-color: pink;
+			border-right-color: yellow;
+			border-top-color: orange;
+			animation:book 2s linear 0s infinite normal;
+		}
+		@keyframes book
+		  {
+		  	0%
+		  	{
+		  		transform:perspective(400px) rotateZ(0deg);
+
+		  	}
+		  	50%
+		  	{
+		  		background-color:skyblue;
+		  	}
+		  	100%
+		  	{
+		  		transform:perspective(400px) rotateZ(360deg);
+		  	}
+		  }
+		#a
+		{
+			display:inline-block;
+			background-color:lightblue;
+		    position:relative;
+		    left:-230px;
+		    top:-27px;
+			width:150px;
+			height:150px;
+			border-radius:70%;
+		}
+
+		
+		
+
+	</style>
+</head>
+<body>
+   <div type="circle">
+   	<ul>
+   		<li id="b"></li>
+   		<li id="a"></li>
+   	</ul>
+   	</div>
+</body>
+</html>

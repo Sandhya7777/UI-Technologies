@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>animation4</title>
+	<style>
+		.s
+		{
+			background:linear-gradient(45deg,orange,yellow,blue); 
+			width:90px;
+			height:90px;
+			padding:40px;
+			border-radius:50%;
+			border:15px solid lightgreen ;
+			animation: svs 4s linear 0s infinite normal;
+		}
+		@keyframes svs
+		{
+			0%,100%
+			{
+				transform:scale(1,1);
+				border:10px solid red;
+				animation-delay: 0.1s;
+
+			}
+			25%
+			{
+				transform:scale(1,1);
+				border:15px solid blue;
+				animation-delay: 0.3s;
+			}
+			50%
+			{
+				transform:scale(1,1);
+				border:20px solid yellow;
+				animation-delay: 0.5s; 
+			}
+			75%
+			{
+				transform:scale(1,1);
+				border:25px solid pink ;
+				animation-delay: 0.6s; 
+			}
+
+
+		}
+	</style>
+</head>
+<body>
+  <div class="s">
+  	
+  </div>
+</body>
+</html>
