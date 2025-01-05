@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML LINKS WITH CSS STYLES</title>
+	<style>
+		a
+		{
+			position: relative;
+			top: 150px;
+			left: 250px;
+			box-shadow: 0 0 10px black;
+			padding: 50px;
+			border-radius: 10px;
+			background: linear-gradient(45deg,deeppink,violet,deeppink);
+			color: white;
+			text-decoration: none;
+		}
+		
+		.sandy:hover
+		{
+			background: linear-gradient(45deg,yellow,pink,yellow);
+			color: green;
+			text-decoration: underline;
+		}
+		.sandy:active
+		{
+			background: linear-gradient(45deg,darkred,grey,darkred);
+			color: white;
+			font-weight: bold;
+			text-decoration: none;
+		}
+		.sandy:visited
+		{
+			background: linear-gradient(45deg,coral,darkslategrey,coral);
+			color: black;
+		}
+	</style>
+</head>
+<body>
+     <a  href="#" class="sandy">Life</a>
+
+</body>
+</html>

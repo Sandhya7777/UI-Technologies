@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Z-INDEX</title>
+	<style>
+		div
+		{
+			padding: 20px;
+			box-shadow: 0 0 10px black;
+			color: white;
+			border-radius: 10px;
+			width: 120px;
+			text-align: center;
+		}
+		#a
+		{
+			background: linear-gradient(45deg,yellow,pink,yellow);
+			position: relative;
+			top: 10px;
+			left: 352px;
+			z-index: 3;
+		}
+		#b
+		{
+			background: linear-gradient(45deg,yellow,pink,yellow);
+			position: relative;
+			top: 72px;
+			left: 423px;
+			z-index: 2;
+		}
+		#c
+		{
+			background: linear-gradient(45deg,yellow,pink,yellow);
+			position: relative;
+			top: 42px;
+			left: 504px;
+			z-index: 1;
+		}
+	</style>
+</head>
+<body>
+	<div id = "a">Box one</div>
+	<div id = "b">Box two</div>
+	<div id = "c">Box three</div>
+
+
+</body>
+</html>

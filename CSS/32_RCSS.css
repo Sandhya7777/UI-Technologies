@@ -1,0 +1,104 @@
+table
+{
+	width:100%;
+	border-collapse: collapse;
+}
+a
+{
+	box-shadow: 0 0 10px red;
+	background:linear-gradient(45deg,yellow,pink,yellow);
+	border-radius: 20px;
+	padding:13px;
+	width:15%;
+	text-transform: uppercase;
+	text-decoration: none;
+	color:black;
+}
+.v1
+{
+	border-left:3px solid black;
+	height:2090px;
+	position:absolute;
+	left:30%;
+
+}
+h1
+{
+	text-align:center;
+	box-shadow:0 0 10px blue;
+	background:linear-gradient(45deg,blue,pink,blue);
+	border-radius:0 20px 0 20px;
+	padding:10px;
+	width:75%;
+	color:white;
+	margin:auto;
+}
+#a
+{
+	width:70%;
+	text-align:justify;
+}
+#b
+{
+	position:fixed;
+	top:310px;
+	left:20px;
+}
+#c
+{
+	position:fixed;
+	top:360px;
+	left:20px;
+}
+#d
+{
+	position:fixed;
+	top:410px;
+	left:20px;
+}
+#e
+{
+	position:fixed;
+	top:460px;
+	left:20px;
+}
+#f
+{
+	position:fixed;
+	top:510px;
+	left:20px;
+}
+#g
+{
+	position:fixed;
+	top:560px;
+	left:20px;
+}
+#h
+{
+	position:sticky;
+	top:610px;
+	left:0px;
+}
+#k
+{
+	text-align:center;
+	box-shadow:0 0 10px blue;
+	background:linear-gradient(45deg,yellow,pink,yellow);
+	border-radius:0 20px 0 20px;
+	padding:10px;
+	width:75%;
+	color:black;
+	margin:auto;
+}
+#l
+{
+    box-shadow: 0 0 10px red;
+	background:linear-gradient(45deg,blue,white,blue);
+	border-radius: 20px;
+	padding:6px;
+	width:15%;
+	text-transform: uppercase;
+	text-decoration: none;
+	color:white;	
+}

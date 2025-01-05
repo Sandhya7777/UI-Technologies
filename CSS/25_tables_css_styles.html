@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TABLES WITH CSS STYLES</title>
+	<style>
+		body
+		{
+			font-family: "comic sans ms",sans-serif;
+        }
+        table,td,th
+        {
+        	border-radius: 20px;
+        }
+        table
+        {
+        	width: 20%;
+        }
+        th,td
+        {
+        	padding: 20px;
+        	text-align: center;
+        	color: white;
+        	box-shadow: 0 0 10px blue;
+        	margin: 10px;
+        }
+        thead
+        {
+        	background: linear-gradient(45deg,blue,yellow,red);
+        }
+        tbody
+        {
+            background: linear-gradient(45deg,red,yellow,red);
+
+        }
+        td:hover
+        {
+            background: linear-gradient(45deg,blue,pink,blue);
+
+        }
+        tr:nth-child(odd)
+        {
+            background: linear-gradient(45deg,red,yellow,red);
+        }
+        tr:nth-child(even)
+        {
+            background: linear-gradient(45deg,blue,yellow,coral);
+        }
+    </style>
+    </head>
+    <body>
+    	<table border="2px">
+    <thead>
+    	<tr>
+    		<th>S.No</th>
+    		<th>EmpName</th>
+    		<th>CompanyName</th>
+    		<th>Salary</th>
+    	</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>1.</td>
+    			<td>Sandhya</td>
+    			<td>Broadcom</td>
+    			<td>50 k</td>
+    		</tr>
+    		<tr>
+    			<td>2.</td>
+    			<td>Rajita</td>
+    			<td>TCS</td>
+    			<td>50 k</td>
+    		</tr>
+    		<tr>
+    			<td>3.</td>
+    			<td>Priya</td>
+    			<td>HCL</td>
+    			<td>30 k</td>
+    		</tr>
+    	</tbody>
+</body>
+</html>
