@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Transform Example 1</title>
+	<style>
+		body
+		{
+			background-color: black;
+		}
+		div
+		{
+			width: 250px;
+			height: 250px;
+			margin: 60px auto;
+			border-radius: 20px;
+			box-shadow: 0 0 10px black;
+			overflow: hidden;
+		}
+		div img
+		{
+			width: 250px;
+			height: 250px;
+			border-radius: 20px;
+			transition: all 2s;
+			filter: grayscale(100%);
+		}
+		div :hover img
+		{
+			transform:scale(1.2,1.2);
+			filter: grayscale(0%);
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="pic.jpg">
+	</div>
+</body>
+</html>

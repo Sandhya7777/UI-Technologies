@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>image and text display</title>
+	<style>
+		.img
+		{
+			width: 450px;
+			height: 300px;
+			margin: 60px auto;
+			border-radius:20px;
+			box-shadow: 0 0 10px blue;
+			overflow: hidden;
+			position: relative;
+
+		}
+		.img img
+		{
+			width: inherit;
+			height: inherit;
+			border-radius: inherit;
+		
+			transform:translatex(200px); 
+			transition: all 2s;
+
+		}
+		.img:hover img
+		{
+			transform: perspective(300px) translatex(0px);
+		}
+		.text p
+		{
+			position: absolute;
+			top:0px;
+			background-color: rgba(77,100,0,0.5);
+			color: black;
+			width: 50%;
+            transform:translateX(0px);
+            transition: all 3s;
+            overflow:hidden;
+
+		}
+		.img:hover .text
+		{
+			transform: perspective(300px) translateX(-200px) ;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="img">
+		<img src="pic2.jpg">
+		<div class="text">
+			<p>All power is within you; you can do anything and everything. Believe in that, do not believe that you are weak; do not believe that you are half-crazy lunatics, as most of us do nowadays. You can do any thing and everything, without even the guidance of any one. Stand up and express the divinity within you.</p>
+		</div>
+		
+	</div>
+</body>
+</html>

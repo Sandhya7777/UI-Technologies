@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vertical motion</title>
+	<style>
+		.img
+		{
+			width: 450px;
+			height: 300px;
+			margin: 60px auto;
+			border-radius:20px;
+			box-shadow: 0 0 10px blue;
+			overflow: hidden;
+			position: relative;
+
+		}
+		.img img
+		{
+			width: inherit;
+			height: inherit;
+			border-radius: inherit;
+			transform:translatey(0px); 
+			transition: all 3s;
+
+		}
+		.img:hover img
+		{
+			transform: perspective(300px) translatey(-150px);
+		}
+		.text p
+		{
+			position: absolute;
+			border-radius: 20px;
+			bottom:0px;
+			background-color: rgba(0,0,0,0.5);
+			color: black;
+			height:50%;
+            transform:translateY(150px);
+            transition: all 3s;
+        }
+        .img:hover .text
+		{
+			background-color: rgba(77,77,0,0.5);
+			transform: perspective(300px) translatey(-290px) ;
+		}
+	</style>
+</head>
+<body>
+	<div class="img">
+		<img src="pic2.jpg">
+		<div class="text">
+			<p>We are responsible for what we are, and whatever we wish ourselves to be, we have the power to make ourselves. If what we are now has been the result of our own past actions, it certainly follows that whatever we wish to be in future can be produced by our present actions; so we have to know how to act</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS FANCY LOGIN FORM</title>
+	<style>
+		body
+		{
+			background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRzy9jYdB_DihnIwXu7lJjX6octo0WbJ28XIA&usqp=CAU);
+			background-attachment: fixed;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.login
+		{
+			background:linear-gradient(45deg,blue,black,blue);
+			color:white;
+			width: 300px;
+			text-align: center;
+			margin:100px auto;
+			border-radius: 20px;
+			box-shadow: 0 0 20px white;
+			padding:10px;
+		}
+		.form-group input[type="text"],
+		.form-group input[type="email"],
+		.form-group input[type="password"],
+		select
+		{
+			width: 250px;
+			height: 26px;
+			margin-bottom: 10px;
+			border:none;
+			outline: none;
+			border-bottom: 2px solid blue;
+			background:transparent;
+			color: white;
+			font-size: 17px;
+		}
+		::placeholder
+		{
+			color:white;
+		}
+		.form-group .submit
+		{
+			background:linear-gradient(45deg,yellow,pink,yellow);
+			color:white;
+			width: 250px;
+			padding: 10px;
+			font-size: 18px;
+			border-radius: 15px;
+			box-shadow: 0 0 10px white;
+			outline: none;
+			border:none;
+			margin-bottom: 15px;
+			margin-top: 10px;
+		}
+		.form-group .submit:hover
+		{
+			cursor: pointer;
+			background:linear-gradient(45deg,black,white,black);
+			color:blue;
+		}
+		.form-group select option
+		{
+			color:black;
+		}
+		.icon
+		{
+			font-size: 50px;
+			margin-top: -90px;
+			background-color:blue;
+			border-radius: 50%;
+			padding: 20px;
+			border:5px solid grey;
+			border-top: red;
+			border-bottom: white;
+			border-left:yellow 
+			border-right:green;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="login">
+		<div class="icon">
+		<i class="far fa-user"></i>	
+		</div>
+		<h2>Login Here</h2>
+		<div class="form-group">
+			<i class="fas fa-user"></i>
+			<input type="text" name="usn" placeholder="UserName">
+		</div>
+		<div class="form-group">
+			<i class="fas fa-envelope-square"></i>
+			<input type="email" name="mail" placeholder="Email">
+		</div>
+		<div class="form-group">
+			<i class="fas fa-lock"></i>
+			<input type="password" name="pw" placeholder="Password">
+		</div>
+		<div class="form-group">
+			<i class="fas fa-mobile-alt"></i>
+			<input type="text" name="ph" placeholder="MobileNumber">
+		</div>
+		<div class="form-group">
+			<i class="fas fa-filter"></i>
+			<select>
+				<option>Select Designation</option>
+				<option>Sr.Software Developer</option>
+				<option>Jr.Software Developer</option>
+				<option>Team Lead</option>
+				<option>Manager</option>
+			</select>
+		</div>
+        <div class="form-group">
+        	<input type="submit" name="submit" value="SUBMIT" class="submit">
+        </div>
+<script src="https://kit.fontawesome.com/8a76c77de6.js" crossorigin="anonymous"></script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Door for God</title>
+    <style>
+        body
+        {
+            background-image: url(https://images.unsplash.com/photo-1501686962565-1350ab98237f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        #god
+        {
+            width: 300px;
+            height: 600px;
+            position: relative;
+            border-radius: 20px;
+            margin: 5px 480px;
+            border:1px solid cyan;
+            box-shadow: 0 0 20px whitesmoke ;
+        }
+        #left
+        {
+            position:absolute;
+            width:150px;
+            height: 600px;
+            border-radius: 20px 0px 0px 20px;
+            top:15px;
+            left:490px;
+            transition: all 2s linear 0s;
+        }
+        #right
+        {
+            position:absolute;
+            border-radius: 0px 20px 20px 0px;
+            width:150px;
+            height: 600px;
+            top:15px;
+            left:640px;
+            transition: all 2s linear 0s;
+        }
+        #door:hover #left
+        {
+            transform: perspective(150px) translateX(-90%);
+        }
+        #door:hover #right
+        {
+            transform: perspective(150px) translateX(90%);
+        }
+    </style>
+</head>
+<body>
+    <img id="god" src="god.jpg">
+    <div id="door">
+    <img id="left" src="ldoor.jpg">
+    <img id="right" src="rdoor.jpg">
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+body
+{
+	text-align:center;
+	font-family:'comic sans ms',sans-serif;
+	background-size:cover;
+	background-attachment:fixed;
+	color:white;
+}
+h2
+{
+	font-size:30px;
+	text-shadow:0 0 10px red;
+}
+fieldset
+{
+	border:2px solid white;
+	border-radius:0px 20px 0px 20px;
+	text-align:left;
+	background-color:rgba(0,0,0,0.5);
+	padding:10px;
+}
+fieldset legend
+{
+	border:2px solid white;
+	border-radius:0px 20px 0px 20px;
+	color:white;
+	background:linear-gradient(45deg,blue,green,blue);
+	padding:10px;
+	box-shadow:0 0 10px red;
+	font-size:20px;
+	margin-top:15px;
+
+}
+table
+{
+	width:100%;
+}
+input[type='text'],
+textarea,
+input[type='number'],
+input[type='email'],
+select,
+input[type='month'],
+input[type='date']
+{
+	width:120px;
+	height:20px;
+	border-radius:10px;
+	border:none;
+	outline:none;
+	margin:2px;	
+}
+textarea
+{
+	height:40px;
+}
+th
+{
+	text-align:left;
+}
+.btn
+{
+	padding:10px;
+	border-radius:10px;
+	outline:none;
+	border:none;
+	background:linear-gradient(45deg,blue,green,blue);
+	color:white;
+	box-shadow:0 0 10px blue;
+}
+.btn:hover
+{
+	cursor:pointer;
+}
+input[type='text']:focus,
+textarea:focus,
+input[type='number']:focus,
+input[type='email']:focus,
+select:focus,
+input[type='month']:focus,
+input[type='date']:focus
+{
+	border:3px solid black;
+}

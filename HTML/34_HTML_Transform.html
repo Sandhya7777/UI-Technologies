@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Transform Example 2</title>
+	<style>
+		.img
+		{
+			box-shadow: 0 0 10px black;
+			width: 300px;
+			height: 200px;
+			margin: 60px auto;
+			border-radius: 20px;
+			overflow:hidden;
+			position: relative;
+		}
+		.img img 
+		{
+			width:inherit;
+			height:inherit;
+			border-radius:inherit;
+			transition: all 2s;
+		}
+		.img :hover img
+		{
+			transform: scale(1.2,1.2);
+		}
+		.text
+		{
+			position: absolute;
+			top: 0px;
+			width: 50%;
+			background-color:rgba(0,0,0,0.5);
+			color: white;
+			transform:perspective(400px) rotateY(90deg);
+			transition: all 3s;
+			transform-origin: left;
+			box-shadow: :0 0 10px black;
+		}
+		.img :hover .text
+		{
+			transform:perspective(400px) rotateY(0deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="img">
+		<img src="pic2.jpg">
+		<div class="text">
+			<p>Purity,patience, and preserverance are the three essentials to success, and above all: love.</p>
+		</div>
+	</div>
+</body>
+</html>
