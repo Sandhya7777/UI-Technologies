@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width-device-width,instal-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/mdb.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<title>DOCUMENT</title>
+</head>
+<body>
+	<h1 id="abc">Welcome to document
+	<a href="#">Shop in amazon</a></h1>
+	<script>
+		let val = document // document is an predefined object which is available in window object(browser).
+		comsole.log(val);
+		val = document.head;
+		console.log(val);
+		val = document.body;
+		console.log(val);
+		val = document.h1;
+		console.log(val);// undefined
+		let h1Tag = document.getElementsByTagName("h1");
+		comsole.log(h1Tag);
+		let heading = document.getElementById("abc");// get element by taga name and get element by id are predefined methods which are available in document object.
+		// by using above methods we canot select the html elements through mixed selectors.
+		// documentgetElementById(h1 a) it will through error we cannot use.
+		// if we want use mixed selectors document.QuerySelector(#name)or(.name)
+		console.log(heading);
+		let anchorTag = document.querySelector('h1 a');
+		console.log(anchorTag);
+		let aTag = anchorTag.innerText;// innertext is a property which is used to take text from the html elements.
+		console.log(aTag);
+		console.log(anchorTag.innerText ='Welcome');
+		//Styles by using JavaScript
+		let headingTag = document.querySelector('h1');
+		headingTag.style.backgroundColor = 'blue';
+		headingTag.style.color = 'white';
+		headingTag.style.boxShadow = '0 0 10px black';
+		headingTag.style.textAlign = 'center';
+</script>
+</body>
+</html>

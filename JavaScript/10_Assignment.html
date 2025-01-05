@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width-device-width,instal-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/mdb.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<title>jspiders</title>
+</head>
+<body>
+  <div class="container">
+  	<div class="card">
+  		 <div class="card-header text-center text-white bg-danger">
+  		 	 <h1>JSPIDERS</h1>
+  		 </div>
+  		 <div class="card-body">
+  		 	<ul class="list-group">
+  		 		<li class="list-group-item list-group-item-success">
+  		 		  <div class="form-group form-inline">
+  		 		  	<label>COURSES:</label>
+  		 		   <select class="form-control" id="Course">
+  		 		  	<option>...Select Course...</option>
+  		 		  	 <option>JAVA</option>
+  		 		  	 <option>HTML</option>
+  		 		  	 <option>CSS</option>
+  		 		  	 <option>SQL</option>
+  		 		   </select>
+  		 		  </div>
+  		 		</li>
+  		 		<li class="list-group-item list-group-item-warning">
+  		 			<div class="form-group form-inline">
+  		 				<label>Total Fee:</label>
+  		 				<input type="text" name="" id="total">
+  		 			</div>
+  		 		</li>
+  		 		<li class="list-group-item list-group-item-secondary">
+  		 			<div class="form-group form-inline">
+  		 				<label>Caste:</label>
+  		 				<input type="radio" name="r1" id="obc">OBC
+  		 				<input type="radio" name="r1" id="oc">OC
+  		 				<input type="radio" name="r1" id="st">ST
+  		 			</div>
+  		 		</li>
+  		 		<li class="list-group-item list-group-item-primary">
+  		 			<div class="form-group form-inline">
+  		 				<label>Conc Fee:</label>
+  		 				<input type="text" name="" id="confee">
+  		 			</div>
+  		 		</li>
+  		 		<li class="list-group-item list-group-item-info">
+  		 			<div class="form-group form-inline">
+  		 				<label>Paid Fee:</label>
+  		 				<input type="text" name="" id="paid" value="0">
+  		 			</div>
+  		 		</li>
+  		 		<li class="list-group-item list-group-item-dark">
+  		 			<div class="form-group form-inline">
+  		 				<label>Due Fee:</label>
+  		 				<input type="text" name="" id="duefee">
+  		 			</div>
+  		 		</li>
+  		 	</ul>
+  		 	<button class="btn btn-secondary w-25" id="calce">Calculate</button>
+  		    </div>
+  		 <div class="card-footer bg-danger text-center">
+  		 	<h3>Developed By@Sandhya</h3>
+  		 </div>		
+  	</div> 	
+  </div>
+</body>
+<script>
+	let JAVA=5000;
+
+	let HTML=4000;
+
+	let CSS=3000;
+
+	let SQL=2000;
+
+	let style=document.querySelector('#Course');
+
+	let sty=document.querySelector('#total');
+
+	style.addEventListener('change',function()
+	{
+		if(style.value=='JAVA')
+		{
+            sty.value=JAVA;
+		}  
+		else if(style.value=='HTML')   
+		{
+			sty.value=HTML;
+		}  
+		else if(style.value=='CSS')   
+		{
+			sty.value=CSS;
+		}  
+		else if(style.value=='SQL')   
+		{
+			sty.value=SQL;
+		}  
+	});
+	let obc=700;
+
+	let oc=500;
+
+	let st=1000;
+
+	let sel=document.querySelector('#obc');
+
+	let pre=document.querySelector('#confee');
+
+	sel.addEventListener('change',function()
+	{
+       pre.value=obc;
+	});
+	let sel1=document.querySelector('#oc');
+
+	sel1.addEventListener('change',function()
+	{
+      pre.value=oc;
+	});
+	let sel2=document.querySelector('#st');
+
+	sel2.addEventListener('change',function()
+	{
+       pre.value=st;
+	});
+	let pack=document.querySelector('#duefee');
+
+	let cal=document.querySelector('#calce');
+
+	cal.addEventListener('click',function()
+	{
+      let set=document.querySelector('#total').value-document.querySelector('#confee').value-document.querySelector('#paid').value;
+
+      pack.value=set;
+	});
+</script>
+</html>

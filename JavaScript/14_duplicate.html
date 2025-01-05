@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Duplicate elements</title>
+</head>
+<body>
+<script>
+	let stuNames = ['Sandhya','Priya','rajitha','Sandhya','Sucharitha'];
+	 let result =stuNames.filter(function(value,index,array)
+	{
+		return array.indexOf(value)==index;
+	});
+	 console.log(result);
+</script>
+</body>
+</html>

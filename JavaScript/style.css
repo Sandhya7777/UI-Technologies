@@ -1,0 +1,27 @@
+.bg-secondary{
+	background:linear-gradient(45deg,red,blue,red);
+}
+.bg-purple{
+	background-color: #F7C177;
+}
+.isform-valid
+{
+	border: 3px soild limegreen;
+	border-left: 15px solid limegreen;
+	box-shadow: 0 0 5px limegreen;
+}
+.isform-valid
+{
+	border: 3px soild red;
+	border-left: 15px solid orange;
+	box-shadow: 0 0 5px red;
+}
+.text-success
+{
+	color: limegreen;
+	
+}
+.text-danger
+{
+	color: red;
+}

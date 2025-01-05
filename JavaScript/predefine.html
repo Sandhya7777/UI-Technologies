@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS PRE DEFINED OBJECTS</title>
+</head>
+<body>
+	<script>
+function calculateCircumference(radius) {
+return 2 * Math.PI * radius;
+}
+
+console.log(Math.PI);
+// expected output: 3.141592653589793
+
+console.log(calculateCircumference(10));
+
+let a = 'a'
+let b = 'b'
+if (a < b) { // true
+  console.log(a + ' is less than ' + b)
+} else if (a > b) {
+  console.log(a + ' is greater than ' + b)
+} else {
+  console.log(a + ' and ' + b + ' are equal.')
+}
+let m = Number('123')  
+let s = Number('sandhya') === 123 
+console.log(m) 
+console.log(s)
+let y = Number("unicorn")  
+let p =Number(undefined)
+console.log(y)
+console.log(p)
+
+let today = new Date()
+let birthday = new Date('December 14, 1997 03:24:00')
+console.log(today)
+console.log(birthday)
+
+
+	</script>
+
+</body>
+</html>

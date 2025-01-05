@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Table</title>
+</head>
+<body>
+<!--Script code-->
+<script>
+	let employees = [
+		{
+		 name:'Sandhya',
+		 age:23,
+		 gender:'female',
+		 active:true
+		},
+		{
+		 name:'Rajitha',
+		 age:23,
+		 gender:'female',
+		 active:true
+		},
+		{
+		 name:'Samara',
+		 age:20,
+		 gender:'male',
+		 active:false
+		},
+		{
+		 name:'Jasmitha',
+		 age:13,
+		 gender:'female',
+		 active:false
+		}
+	];
+	console.log(employees);
+	console.log(employees[0]);
+	console.log(employees[0].name);
+	for(let emp of employees)
+	{
+		console.log(emp);
+		console.log(emp.name);
+	}
+	for(let emp of employees)
+	{
+		if(emp.active)
+		{
+		console.log(emp);
+	   }
+	}
+	let result = employees.filter(function(emp)
+	    //filter is a method which creates an new array if callback function returns true values,if that is false.
+		// passing a function as an argument for another function and getting its called is known as callback function.
+		// if we are creating a function without having logic names is known as ananomyous functions.
+		
+	{
+		return emp.active
+	});
+     console.log(result);
+</script>
+</body>
+</html>

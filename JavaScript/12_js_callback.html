@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Callback functions</title>
+</head>
+<body>
+
+
+	<!--Script Code-->
+	<script>
+		let sum = (a,b)
+		{
+			return a+b;
+		}
+		let mul = (a,b)
+		{
+			return a*b;
+		}
+		let sub =(a,b)
+		{
+			return a-b;
+		}
+		let calculate=(a,b,callback)=>
+		{
+			let result = 0;
+			result=callback(a,b);
+			return result;
+		}
+		//let output = calculate(10,20,'sum');
+		//console.log(output);
+		//output = calculate(10,20,'mul');
+		//console.log(output);
+		//let calculate=(a,b,calType)=>
+		//{
+			//let result = 0;
+			//if(calType==='sum')
+			//{
+			  //result=a+b;
+		   // }
+		    //else if(calType==='mul')
+			//{
+			 // result=a*b;
+		    //}
+		    //return result;
+		}
+		let output = calculate(10,20,'sum');
+		console.log(output);
+		output = calculate(10,20,'mul');
+		console.log(output);
+		
+	</script>
+</body>
+</html>

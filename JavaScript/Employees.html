@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/mdb.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<title>Employee Details</title>
+	<style type="text/css">
+		
+		.card-header
+		{
+			background:linear-gradient(75deg,#2C3E50,#00897B);
+		}
+		.card-footer
+		{
+			background:linear-gradient(75deg,#2C3E50,#00897B);
+		}
+		.card-body
+		{
+			background:linear-gradient(75deg,#82E0AA,#82E0AA);
+		}
+		#details
+		{
+			margin-left: 150px;
+
+		}
+		#heading
+		{
+			font-size: 20px;
+
+			background:linear-gradient(75deg,yellow,red,yellow);
+
+			color: white;
+
+			text-transform: uppercase;
+		}
+		table th
+		{
+			background-color:yellow;
+
+			color: black;
+
+			text-transform: uppercase;
+
+		}
+
+		body
+		{
+			background-color: lightgray;
+		}
+
+		.btn
+		{
+			border-radius: 20px;
+			box-shadow: 0 0 20px black;
+		}
+
+		table
+		{
+			box-shadow: 0 0 20px black;
+
+			width: 100%;
+		}
+
+		.table
+		{
+			position: relative;
+			left: 100px;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="card mt-3">
+			<div class="card-header text-center text-white">
+				EMPLOYEE DETAILS
+			</div>
+			<div class="card-body text-center">
+
+				<button class="btn btn-primary" id="all">All Employees</button>
+                <button class="btn btn-secondary" id="male">Male Employees</button>
+                <button class="btn btn-danger" id="female">Female Employees</button>
+                `<form input type="search" name="Search" placeholder="Employee Name" id="emp-search"></form>
+
+	            <div  class="tab-content mt-5">
+
+	            	<h5 id="count"></h5><br>
+	            	<table border="2px" class="table w-75 table-info ml-5 ">
+	            		<thead>
+	            			<th>ID</th>
+	            			<th>First_Name</th>
+	            			<th>Last_Name</th>
+	            			<th>Email</th>
+	            			<th>Gender</th>
+	            			<th>Country</th>
+	            		</thead>
+	            		<tbody id="details">
+	            			
+	            		</tbody>
+	            	</table>
+	            </div>
+
+			</div>
+
+			<div class="card-footer text-center text-white">
+				<h5>Developed By @ Sandhya</h5>
+			</div>
+		</div>
+	</div>
+	
+</body>
+<script src="Employees.js"></script>
+</html>

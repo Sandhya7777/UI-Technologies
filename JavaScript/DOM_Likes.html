@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/mdb.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>JS DOM LIKES APP</title>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-header text-center
+					bg-secondary">
+						<h3 class="card-title font-weight-bold text-white pt-2">Jspiders Likes App</h3>
+					</div>
+					<div class="card-body bg-light">
+						<div class="row">
+							<div class="col-md-6">
+								<a href="#" class="btn
+								btn-block bg-success text-white" id="likes-btn">
+									<i class="fa fa-thumbs-up fa-3x"></i>
+									<h3>LIKES</h3>
+								</a>
+								<a href="#"
+								class="btn btn-block mt-3 bg-dark text-white fa-2x" id="display-likes">0</a>
+							</div>
+							<div class="col-md-6">
+								<a href="#" class="btn
+								btn-block bg-danger text-white" id="dislikes-btn">
+									<i class="fa fa-thumbs-down fa-3x"></i>
+									<h3>DISLIKES</h3>
+								</a>
+								<a href="#"
+								class="btn btn-block mt-3 bg-dark text-white fa-2x" id="display-dislikes">0</a>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer text-center
+					bg-secondary text-white">
+						<h2>Total:<span id="total-likes"></span></h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+let likes = 0;
+let dislikes = 0;
+let total = 0;
+let likesBtn=document.querySelector('#likes-btn');
+likesBtn.addEventListener('click',function()
+{
+	likes++;
+	total++;
+	let displayLikes=document.querySelector('#display-likes');
+	displayLikes.innerText=likes;
+	let totalLikes=document.querySelector('#total-likes');
+	totalLikes.innerText=total;
+});
+let dislikesBtn=document.querySelector('#dislikes-btn');
+dislikesBtn.addEventListener('click',function()
+{
+	dislikes++;
+	total++;
+	let displayLikes=document.querySelector('#display-dislikes');
+	displayLikes.innerText=likes;
+	let totalLikes=document.querySelector('#total-likes');
+	totalLikes.innerText=total;
+});
+</script>
+</body>
+</html>

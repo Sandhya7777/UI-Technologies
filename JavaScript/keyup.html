@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KEY UP</title>
+	<style>
+		div
+		{
+			background-color: grey;
+			margin-top: 50px;
+			text-align: center;
+		}
+		input[type='text']
+		{
+			margin-top: 10px;
+			height: 30px;
+			outline: none;
+			font-size: 30px;
+		}
+		h2
+		{
+			font-size: 30p;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<form>
+			<input type="text" id="input-box">
+			<h2 id="display-element"></h2>
+		</form>
+	</div>
+<script>
+	let inputTag=document.querySelector('#input-box');
+	let displayEle=document.querySelector('#display-element');
+	inputTag.addEventListener('keyup',function()
+	{
+		/*alert('working');*/
+		let textEntered=inputTag.value;
+		displayEle.innerText=textEntered;
+		});
+</script>
+</body>
+</html>

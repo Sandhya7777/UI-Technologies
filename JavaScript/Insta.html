@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	body
+		{
+			width:100%;
+			overflow-x:hidden;
+		}
+		h3
+		{
+			display:inline-block;
+		}
+		div
+		{
+			text-align: center;
+		}
+		h1,footer
+		{
+			background-color:lightblue;
+			padding:10px;
+			text-align: center;
+			font-family: sans-serif;
+		}
+		img
+		{
+			margin-left:65px;
+		}
+	</style>
+	<title>Instagram page</title>
+	<link rel="stylesheet" href="CSS/font-awesome.css">
+	<link rel="stylesheet" href="CSS/bootstrap.css">
+	<link rel="stylesheet" href="CSS/mdb.css">
+</head>
+<body>
+	<h1>Instagram</h1>
+ <img src="pic1.jpg" width="1400px" height="500px" align="center">
+ <div>
+ <h3><span id="likes">0</span></h3>
+ <button onclick="addone()" type="button" class="btn btn-light"><i class="fa fa-thumbs-up pr-2"></i>Likes</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <h3><span id="dislikes">0</span></h3>
+ <button onclick="addon()" type="button" class="btn btn-light"><i class="fa fa-thumbs-down pr-2"></i>disLikes</button>
+</div>
+<footer>
+	<h3><span id="total">0</span></h3>
+	<button onclick="total()" type="button" class="btn btn-light">Total</button>
+</body>
+<script>
+	function addone()
+	{
+		var inc=document.getElementById("likes").innerHTML
+		inc++;
+		document.getElementById("likes").innerHTML=inc;
+	}
+	function addon()
+	{
+		var inc1=document.getElementById("dislikes").innerHTML
+		inc1++;
+		document.getElementById("dislikes").innerHTML=inc1;
+	}
+	function total()
+	{
+		inc=parseInt(document.getElementById("likes").innerHTML);
+		inc1=parseInt(document.getElementById("dislikes").innerHTML);
+		var incre=inc+inc1;
+		document.getElementById("total").innerHTML=incre;
+	}
+	
+</script>
+</html>

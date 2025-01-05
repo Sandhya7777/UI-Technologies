@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/mdb.css">
+	<title>DOM MESSAGE</title>
+	<style>
+		div
+		{
+			background-color:grey;
+			padding:20px;
+			margin:20px;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h1 id="heading"></h1>
+
+		<button class="btn btn-warning" id="gm-btn">Good Morning</button>
+		<button class="btn btn-success" id="ga-btn">Good Afternoon</button>
+		<button class="btn btn-danger" id="ge-btn">Good Evening</button>
+
+	</div>
+<script>
+let displayMessage=(message,color)=>
+	{
+		let h1Tag=document.querySelector('#heading');
+		h1Tag.innerText=message;
+		h1Tag.style.color=color;
+	}
+
+let gmBtn=document.querySelector('#gm-btn');
+gmBtn.addEventListener('click',function()
+{
+	displayMessage('Good Morning','blue');
+});
+let gmAtn=document.querySelector('#ga-btn');
+gmAtn.addEventListener('click',function()
+{
+	displayMessage('Good Afternoon','blue');
+});
+let gmEvng=document.querySelector('#ge-btn');
+gmEvng.addEventListener('click',function()
+{
+	displayMessage('Good Evening','blue');
+});
+</script>
+</body>
+</html>

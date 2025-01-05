@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>INSTAGRAM</title>
+<style>
+	body {
+      font-family: sans-serif;
+      padding: 20px;
+   }
+   .fa {
+      font-size: 50px;
+      cursor: pointer;
+      user-select: none;
+   }
+   .fa-thumbs-up {
+      color: blue;
+   }
+   .fa-thumbs-down {
+      color: red;
+   }
+   .fa:hover {
+      transform: scale(1.2);
+   }
+   img
+{
+	height:300px;
+	width: 500px;
+}
+</style>
+<script>
+function addone(field) {
+field.value = Number(field.value) + 1;
+}
+
+function subtractone(field) {
+field.value = Number(field.value) - 1;
+}
+</script>
+</head>
+<body>
+<form name="myform">
+	<img src="pic1.jpg">
+<input type="text" name="myfield" value="0" size="5" readonly="readonly"><br>
+<i class="fa fa-thumbs-up">
+<input type="button" value="Like! " onclick="addone(myfield);" onclick="this.disabled = true"> 
+<i class="fa fa-thumbs-down">
+<input type="button" value="Unlike!" onclick="subtractone(myfield);"><br>
+</form>
+</body>
+</html>
+

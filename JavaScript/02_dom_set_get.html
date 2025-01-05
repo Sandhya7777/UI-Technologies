@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM GET SET</title>
+</head>
+<body>
+	<img src="pic1.jpg">
+	<!--Form-->
+	<form>
+		<input type="password" name="" id="it">
+	</form>
+	<script>
+	let imgTag=document.querySelector('img');
+	console.log(imgTag);
+	imgTag.style.width = '400px';
+	imgTag.style.height = '200px';
+	imgTag.style.boxShadow = '0 0 10px black';
+	imgTag.style.padding = '10px';
+	imgTag.style.borderRadius = '10px';
+	let getAttr = imgTag.getAttribute('src');
+	console.log(getAttr);
+
+	let setAttr = imgTag.setAttribute('src','pick2.jpeg');
+	console.log(setAttr);
+
+	let inputTag = document.querySelector('#it');
+	console.log(inputTag);
+	inputTag.getAttribute('type');
+	inputTag.setAttribute('type','text');
+
+
+	</script>
+
+</body>
+</html>
