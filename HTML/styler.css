@@ -1,0 +1,54 @@
+body
+{
+	background-image:url(job.jpg);
+	background-repeat:none;
+	background-size:cover;
+
+}
+.a
+{
+	text-align:center;
+}
+tr,td
+{
+	font-size:20px;
+	color:white;
+}
+table
+{
+	width:60%;
+}
+a
+{
+	text-decoration:none;
+}
+h2
+{
+	text-align: center;
+}
+.s
+{
+	width:60%;
+	border-collapse: 20px;
+	color: white;
+	border-radius: 20px;
+	text-shadow: 0 0  10pxred;
+
+	
+
+}
+.p
+{
+	text-align: center;
+}
+.vertical
+{
+            border-right: 3px solid white; 
+            height: 600px; 
+            margin-right: 1100px;
+            position: relative;
+
+
+
+ 
+}

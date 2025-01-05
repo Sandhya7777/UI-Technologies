@@ -2,7 +2,7 @@ body
 {
 	text-align:center;
 	font-family:'comic sans ms',sans-serif;
-	background-image: url(img1.jpg);
+	background-image: url(giphy.gif);
 	background-size:cover;
 	background-attachment:fixed;
 	color:black;
@@ -49,12 +49,11 @@ input[type='text'],
 textarea,
 input[type='number'],
 input[type='email'],
-select,
 input[type='month'],
-input[type='date']
+input[type='date'],
+input[type='year']
 input[type='percentage'],
-input[type='House No'],
-input[type='Street No']
+input[type="University"]
 {
 	width:120px;
 	height:20px;
@@ -62,8 +61,4 @@ input[type='Street No']
 	border:none;
 	outline:none;
 	margin:2px;	
-}
-textarea
-{
-	height:40px;
 }
