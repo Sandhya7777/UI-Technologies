@@ -58,7 +58,7 @@ def convert_value(val):
 
 # Save row to Snowflake
 def save_row_to_snowflake(row_data, primary_key_column, table_name="WRNTY_CLM_INPUTS"):
-    # Initialize row_data with default values
+    # Preserve row_data initialization
     row_data = pd.Series({
         "WO_NO": " ",
         "UNIT_NO": " ",
@@ -70,6 +70,9 @@ def save_row_to_snowflake(row_data, primary_key_column, table_name="WRNTY_CLM_IN
         "RMD_FEEDBACK": "",
         "Select": True
     })
+
+    # Debugging: Print row_data to verify initialization
+    print("Initialized row_data:", row_data)
 
     # Determine which columns to update
     columns_to_update = [col for col in row_data.index if col not in (primary_key_column, "Select")]
