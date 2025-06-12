@@ -58,21 +58,8 @@ def convert_value(val):
 
 # Save row to Snowflake
 def save_row_to_snowflake(row_data, primary_key_column, table_name="WRNTY_CLM_INPUTS"):
-    # Preserve row_data initialization
-    row_data = pd.Series({
-        "WO_NO": " ",
-        "UNIT_NO": " ",
-        "SYSTEM": " ",
-        "JOB_ID": "",
-        "HEADER_NOTES": " ",
-        "STATUS": " ",
-        "ESCALATED_TO": " ",
-        "RMD_FEEDBACK": "",
-        "Select": True
-    })
-
-    # Debugging: Print row_data to verify initialization
-    print("Initialized row_data:", row_data)
+    # Debugging: Print row_data to verify the data passed to the function
+    print("Row data passed to save_row_to_snowflake:", row_data)
 
     # Determine which columns to update
     columns_to_update = [col for col in row_data.index if col not in (primary_key_column, "Select")]
@@ -92,18 +79,38 @@ def save_row_to_snowflake(row_data, primary_key_column, table_name="WRNTY_CLM_IN
     # Debugging: Print the values being updated
     print("Values to update:", values)
 
+    # Check if the row exists
+    check_query = f"SELECT COUNT(*) FROM {table_name} WHERE \"{primary_key_column}\" = %s"
     try:
         with dbclosing(connection_file) as conn:
             with conn.cursor() as cur:
-                cur.execute(update_query, values)
-                conn.commit()
-                logging.info(f"Row updated successfully in {table_name}: {row_data}")
-                print(f"Row updated successfully in {table_name}: {row_data}")
+                cur.execute(check_query, [convert_value(row_data[primary_key_column])])
+                row_exists = cur.fetchone()[0] > 0
+
+                if row_exists:
+                    # Perform update
+                    cur.execute(update_query, values)
+                    conn.commit()
+                    logging.info(f"Row updated successfully in {table_name}: {row_data}")
+                    print(f"Row updated successfully in {table_name}: {row_data}")
+                else:
+                    # Perform insert
+                    insert_query = f"""
+                        INSERT INTO {table_name} ({', '.join([f'"{col}"' for col in row_data.index])})
+                        VALUES ({', '.join(['%s' for _ in row_data.index])})
+                    """
+                    insert_values = [convert_value(row_data[col]) for col in row_data.index]
+                    print("Insert Query:", insert_query)
+                    print("Insert Values:", insert_values)
+                    cur.execute(insert_query, insert_values)
+                    conn.commit()
+                    logging.info(f"Row inserted successfully in {table_name}: {row_data}")
+                    print(f"Row inserted successfully in {table_name}: {row_data}")
     except Exception as e:
-        st.error(f"Failed to update row: {e}")
-        logging.error(f"Update failed: {e}")
-        print(f"Update failed: {e}")
-        raise RuntimeError(f"Failed to update row: {e}")
+        st.error(f"Failed to save row: {e}")
+        logging.error(f"Save failed: {e}")
+        print(f"Save failed: {e}")
+        raise RuntimeError(f"Failed to save row: {e}")
 
 # Load data from Snowflake
 df = fetch_data_from_snowflake()
