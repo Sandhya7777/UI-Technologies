@@ -91,11 +91,11 @@ memory = Memory("./cache_dir", verbose=0)
  
 @memory.cache
 def fetch_data_from_snowflake():
-     sql_query = "SELECT * FROM WRNTY_CLM_HEADER LIMIT 100"  # Limit rows to reduce load
+    sql_query = "SELECT * FROM WRNTY_CLM_HEADER LIMIT 100"
     try:
         with dbclosing(connection_file) as conn:
             df = pd.read_sql(sql_query, conn)
-        return df
+        return df.drop(columns=['UNIT_ID'], errors='ignore')  # Drop unnecessary columns
     except Exception as e:
         logging.error(f"Failed to fetch data from Snowflake: {e}")
         raise RuntimeError(f"Failed to fetch data: {e}")
@@ -172,10 +172,6 @@ def save_data_to_snowflake(df):
 # Load data from Snowflake
 df = fetch_data_from_snowflake()
  
-# Remove the 'UNIT_ID' column if it exists
-if 'UNIT_ID' in df.columns:
-    df = df.drop(columns=['UNIT_ID'])
- 
 # Add a 'Select' column and move it to the start of the DataFrame
 df.insert(0, 'Select', False)
  
@@ -216,7 +212,11 @@ if search_query:
     filtered_df = filtered_df[
         filtered_df.apply(lambda row: row.astype(str).str.contains(search_query, case=False, na=False).any(), axis=1)
     ]
- 
+
+# Limit rows displayed in the editor
+max_rows = 50
+filtered_df = filtered_df.head(max_rows)
+
 if not st.session_state.show_form:
     # Display the data editor with only the 'Select' column editable
     disabled_columns = [col for col in filtered_df.columns if col != 'Select']
@@ -323,4 +323,3 @@ else:
             except Exception as e:
                 st.error(f"Failed to reload data: {e}")
                 logging.error(f"Data reload failed: {e}")
-```
