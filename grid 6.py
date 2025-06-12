@@ -91,12 +91,13 @@ memory = Memory("./cache_dir", verbose=0)
  
 @memory.cache
 def fetch_data_from_snowflake():
-    sql_query = "SELECT * from WRNTY_CLM_HEADER limit 100"
+     sql_query = "SELECT * FROM WRNTY_CLM_HEADER LIMIT 100"  # Limit rows to reduce load
     try:
         with dbclosing(connection_file) as conn:
             df = pd.read_sql(sql_query, conn)
         return df
     except Exception as e:
+        logging.error(f"Failed to fetch data from Snowflake: {e}")
         raise RuntimeError(f"Failed to fetch data: {e}")
 
 def save_row_to_snowflake(row_data, primary_key_column, table_name="WRNTY_CLM_INPUTS"):
@@ -110,7 +111,7 @@ def save_row_to_snowflake(row_data, primary_key_column, table_name="WRNTY_CLM_IN
     # Determine which columns to update
     columns_to_update = [col for col in row_data.index if col not in (primary_key_column, "Select")]
 
-    # Construct the update query
+    # Escape column names with double quotes
     update_query = f"""
         UPDATE {table_name}
         SET {', '.join([f'"{col}" = %s' for col in columns_to_update])}
@@ -322,3 +323,4 @@ else:
             except Exception as e:
                 st.error(f"Failed to reload data: {e}")
                 logging.error(f"Data reload failed: {e}")
+```
