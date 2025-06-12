@@ -101,60 +101,63 @@ def fetch_data_from_snowflake():
         raise RuntimeError(f"Failed to fetch data: {e}")
 
 
+# Define the convert_value function
+def convert_value(val):
+    if isinstance(val, (datetime, pd.Timestamp)):
+        return val.strftime("%Y-%m-%d %H:%M:%S")
+    elif isinstance(val, date):
+        return val.strftime("%Y-%m-%d")
+    return val
+
+
 def save_row_to_snowflake(row_data, primary_key_column, table_name="WRNTY_CLM_INPUTS"):
-    def convert_value(val):
-        if isinstance(val, (datetime, pd.Timestamp)):
-            return val.strftime("%Y-%m-%d %H:%M:%S")
-        elif isinstance(val, date):
-            return val.strftime("%Y-%m-%d")
-        return val
-row_data = pd.Series({
-    "WO_NO": " ",
-    "UNIT_NO": " ",
-    "SYSTEM": " ",
-    "JOB_ID": "",
-    "HEADER_NOTES": " ",
-    #"CATEGORY_CLASS": " ",
-    #"ASSIGNMENT": " ",
-    #"LOB": " ",
-    "STATUS": " ",
-    "ESCALATED_TO": " ",
-    "RMD_FEEDBACK": "",
-    #"CANCEL _REASON": " ",
-    #"COPY_CLAIM_1": " ",
-    #"COPY_CLAIM_2": " ",
-    #"LAST_UPDATED_DATE": " ",
-    "Select": True
-})
-primary_key_column = "WO_NO"
+    row_data = pd.Series({
+        "WO_NO": " ",
+        "UNIT_NO": " ",
+        "SYSTEM": " ",
+        "JOB_ID": "",
+        "HEADER_NOTES": " ",
+        #"CATEGORY_CLASS": " ",
+        #"ASSIGNMENT": " ",
+        #"LOB": " ",
+        "STATUS": " ",
+        "ESCALATED_TO": " ",
+        "RMD_FEEDBACK": "",
+        #"CANCEL _REASON": " ",
+        #"COPY_CLAIM_1": " ",
+        #"COPY_CLAIM_2": " ",
+        #"LAST_UPDATED_DATE": " ",
+        "Select": True
+    })
+    primary_key_column = "WO_NO"
  
-# Determine which columns to update
-columns_to_update = [col for col in row_data.index if col not in (primary_key_column, "Select")]
+    # Determine which columns to update
+    columns_to_update = [col for col in row_data.index if col not in (primary_key_column, "Select")]
  
-# Now you can use this list to update your database or DataFrame
-print("Columns to update:", columns_to_update)
-table_name="WRNTY_CLM_INPUTS"
+    # Now you can use this list to update your database or DataFrame
+    print("Columns to update:", columns_to_update)
+    table_name="WRNTY_CLM_INPUTS"
 
 
     # Determine which columns to update
    # columns_to_update = [col for col in row_data.index if col not in (primary_key_column, "Select")]
 
     # Escape column names with double quotes
-update_query = f"""
+    update_query = f"""
         UPDATE {table_name}
         SET {', '.join([f'"{col}" = %s' for col in columns_to_update])}
         WHERE "{primary_key_column}" = %s
     """
-values = [convert_value(row_data[col]) for col in columns_to_update]
-values.append(convert_value(row_data[primary_key_column]))  # Add the WHERE clause value
+    values = [convert_value(row_data[col]) for col in columns_to_update]
+    values.append(convert_value(row_data[primary_key_column]))  # Add the WHERE clause value
 
-try:
+    try:
         with dbclosing(connection_file) as conn:
             with conn.cursor() as cur:
                 cur.execute(update_query, values)
                 conn.commit()
                 logging.info(f"Row updated successfully in {table_name}: {row_data}")
-except Exception as e:
+    except Exception as e:
         st.error(f"Failed to update row: {e}")
         logging.error(f"Update failed: {e}")
         raise RuntimeError(f"Failed to update row: {e}")
@@ -352,3 +355,4 @@ else:
             except Exception as e:
                 st.error(f"Failed to reload data: {e}")
                 logging.error(f"Data reload failed: {e}")
+``` 
