@@ -111,38 +111,8 @@ def convert_value(val):
 
 
 def save_row_to_snowflake(row_data, primary_key_column, table_name="WRNTY_CLM_INPUTS"):
-    row_data = pd.Series({
-        "WO_NO": " ",
-        "UNIT_NO": " ",
-        "SYSTEM": " ",
-        "JOB_ID": "",
-        "HEADER_NOTES": " ",
-        #"CATEGORY_CLASS": " ",
-        #"ASSIGNMENT": " ",
-        #"LOB": " ",
-        "STATUS": " ",
-        "ESCALATED_TO": " ",
-        "RMD_FEEDBACK": "",
-        #"CANCEL _REASON": " ",
-        #"COPY_CLAIM_1": " ",
-        #"COPY_CLAIM_2": " ",
-        #"LAST_UPDATED_DATE": " ",
-        "Select": True
-    })
-    primary_key_column = "WO_NO"
- 
-    # Determine which columns to update
-    columns_to_update = [col for col in row_data.index if col not in (primary_key_column, "Select")]
- 
-    # Now you can use this list to update your database or DataFrame
-    print("Columns to update:", columns_to_update)
-    table_name="WRNTY_CLM_INPUTS"
-
-
-    # Determine which columns to update
-   # columns_to_update = [col for col in row_data.index if col not in (primary_key_column, "Select")]
-
     # Escape column names with double quotes
+    columns_to_update = [col for col in row_data.index if col not in (primary_key_column, "Select")]
     update_query = f"""
         UPDATE {table_name}
         SET {', '.join([f'"{col}" = %s' for col in columns_to_update])}
@@ -355,4 +325,3 @@ else:
             except Exception as e:
                 st.error(f"Failed to reload data: {e}")
                 logging.error(f"Data reload failed: {e}")
-``` 
