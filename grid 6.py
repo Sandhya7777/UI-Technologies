@@ -215,7 +215,13 @@ if search_query:
 
 # Limit rows displayed in the editor
 max_rows = 50
-filtered_df = filtered_df.head(max_rows)
+filtered_df = df.head(max_rows)
+
+edited_df = st.data_editor(
+    filtered_df,
+    use_container_width=True,
+    disabled=[col for col in filtered_df.columns if col != 'Select']
+)
 
 if not st.session_state.show_form:
     # Display the data editor with only the 'Select' column editable
