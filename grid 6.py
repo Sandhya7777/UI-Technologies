@@ -111,8 +111,10 @@ def convert_value(val):
 
 
 def save_row_to_snowflake(row_data, primary_key_column, table_name="WRNTY_CLM_INPUTS"):
-    # Escape column names with double quotes
+    # Determine which columns to update
     columns_to_update = [col for col in row_data.index if col not in (primary_key_column, "Select")]
+
+    # Escape column names with double quotes
     update_query = f"""
         UPDATE {table_name}
         SET {', '.join([f'"{col}" = %s' for col in columns_to_update])}
@@ -121,15 +123,23 @@ def save_row_to_snowflake(row_data, primary_key_column, table_name="WRNTY_CLM_IN
     values = [convert_value(row_data[col]) for col in columns_to_update]
     values.append(convert_value(row_data[primary_key_column]))  # Add the WHERE clause value
 
+    # Debugging: Print the columns and values being updated
+    print(f"Updating columns: {columns_to_update}")
+    print(f"Values: {values}")
+    logging.info(f"Updating columns: {columns_to_update}")
+    logging.info(f"Values: {values}")
+
     try:
         with dbclosing(connection_file) as conn:
             with conn.cursor() as cur:
                 cur.execute(update_query, values)
                 conn.commit()
                 logging.info(f"Row updated successfully in {table_name}: {row_data}")
+                print(f"Row updated successfully in {table_name}: {row_data}")
     except Exception as e:
         st.error(f"Failed to update row: {e}")
         logging.error(f"Update failed: {e}")
+        print(f"Update failed: {e}")
         raise RuntimeError(f"Failed to update row: {e}")
 
 # First call fetches from Snowflake and caches it
