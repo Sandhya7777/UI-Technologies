@@ -217,19 +217,14 @@ if search_query:
 max_rows = 50
 filtered_df = df.head(max_rows)
 
-edited_df = st.data_editor(
-    filtered_df,
-    use_container_width=True,
-    disabled=[col for col in filtered_df.columns if col != 'Select']
-)
-
 if not st.session_state.show_form:
     # Display the data editor with only the 'Select' column editable
     disabled_columns = [col for col in filtered_df.columns if col != 'Select']
     edited_df = st.data_editor(
         filtered_df,
         use_container_width=True,
-        disabled=disabled_columns  # Disable all columns except 'Select'
+        disabled=disabled_columns,
+        key="data_editor_main"  # Add a unique key
     )
  
     # Check if any row is selected
